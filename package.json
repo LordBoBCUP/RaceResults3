@@ -1,0 +1,20 @@
+{
+   "name": "RaceResults3",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/node": "^8.0.29",
+      "ts-node": "^3.3.0",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "nodemon": "^1.19.1",
+      "pg": "^7.11.0",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.18"
+   },
+   "scripts": {
+      "start": "ts-node src/index.ts",
+      "dev": "./node_modules/nodemon/bin/nodemon.js"
+   }
+}

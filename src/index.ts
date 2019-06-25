@@ -1,11 +1,6 @@
 import "reflect-metadata";
 import {createConnection} from "typeorm";
 
-// import {User} from "./entity/User";
-// import {Track} from './entity/Track';
-// import { Rule } from "./entity/Rule";
-// import { appendFile } from "fs";
-
 import routes from "./routes";
 
 const express = require('express');

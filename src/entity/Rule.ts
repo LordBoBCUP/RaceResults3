@@ -25,7 +25,7 @@ export class Rule {
     @Column()
     active: boolean;
 
-    @ManyToOne(type => Track, track => track.rules)
+    @ManyToOne(type => Track, (track: Track) => track.rules)
     track: Track;
 
 

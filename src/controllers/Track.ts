@@ -12,7 +12,7 @@ class TrackController {
         //Get user from database
         const trackRepository = getRepository(Track);
 
-        const tracks = await trackRepository.find();
+        const tracks = await trackRepository.find({ relations: ['rules']});
         //Send the jwt in the response
         res.send(tracks);
     };
@@ -91,11 +91,16 @@ class TrackController {
                 dbRule.html = rule.html;
                 dbRule.url = rule.url;
                 dbRule.active = rule.active;
+                const errors = await validate(dbRule);
+                if (errors.length > 0) {
+                    res.status(400).send(errors);
+                    return;
+                }
                 ruleRepository.save(dbRule);
             }            
         });
 
-        res.status(201).send("Track Updated");
+        res.status(204).send();
     }
 
 }

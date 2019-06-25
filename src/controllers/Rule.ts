@@ -12,7 +12,7 @@ class RuleController {
         const ruleRepository = getRepository(Rule);
         const trackId: number = req.params.trackId;
 
-        const rules = await ruleRepository.find();
+        const rules = await ruleRepository.find({relations: ['track']});
         //Send the jwt in the response
         res.send(rules);
     };
@@ -23,7 +23,7 @@ class RuleController {
 
         const ruleRepository = getRepository(Rule);
         try {
-            const rule = await ruleRepository.findOneOrFail({id: id});
+            const rule = await ruleRepository.findOneOrFail({id: id}, {relations: ['track']});
             res.send(rule);
         } catch (err) {
             res.status(404).send("Track not found with trackId" + id);

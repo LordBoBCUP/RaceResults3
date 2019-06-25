@@ -30,7 +30,7 @@ export class Track {
     @Column()
     active: boolean;
 
-    @OneToMany(type => Rule, rule => rule.track, { 
+    @OneToMany(type => Rule, (rule: Rule) => rule.track, { 
         cascade: true,
     })
     rules: Rule[];

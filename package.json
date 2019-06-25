@@ -8,6 +8,8 @@
       "typescript": "3.3.3333"
    },
    "dependencies": {
+      "class-validator": "^0.9.1",
+      "express": "^4.17.1",
       "nodemon": "^1.19.1",
       "pg": "^7.11.0",
       "reflect-metadata": "^0.1.10",
@@ -15,6 +17,6 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "dev": "./node_modules/nodemon/bin/nodemon.js"
+      "dev": "./node_modules/nodemon/bin/nodemon.js src/index.js"
    }
 }

@@ -1,5 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
 import {Rule} from './Rule';
+import {Lane} from './Lane';
 
 @Entity()
 export class Track {
@@ -34,5 +35,10 @@ export class Track {
         cascade: true,
     })
     rules: Rule[];
+
+    @OneToMany(type => Lane, (lane: Lane) => lane.track, { 
+        cascade: true,
+    })
+    lanes: Lane[];
 
 }
